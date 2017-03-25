@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+{% load i18n %}
+
+{% block title %}
+    {% trans 'Резюме' %}
+{% endblock %}
+
+{% block content %}
+    <h2>{% trans 'Резюме' %}</h2>
+
+    {% for block in resume_blocks %}
+        <section class="resume_block">
+            <h2>{{ block.title }}</h2>
+
+            {% if block.text %}
+                <div>
+                {{ block.text|safe }}
+                </div>
+            {% endif %}
+
+            {% if block.chrono_data.all %}
+                {% for data in block.chrono_data.all  %}
+                    <div class="chrono_data">
+                        <div class="date">
+                            {{ data.from_date|date:"d.m.Y"  }}
+                            <br>
+                            -
+                            <br>
+                            {{ data.to_date|date:"d.m.Y"  }}
+                        </div>
+                        <div class="chrono_data_text">
+                            {{ data.text|safe }}
+                        </div>
+                    </div>
+                {% endfor %}
+            {% endif %}
+
+            {% for skill in block.skills_data.all %}
+                <div class="skill_data">
+                    <div class="col-xs-4">{{ skill.title }}</div>
+                    <div class="col-xs-8">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ skill.value }}%;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </section>
+    {% endfor %}
+{% endblock %}
