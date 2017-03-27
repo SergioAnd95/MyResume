@@ -14,9 +14,5 @@ class ResumeBlockListView(ListView):
     context_object_name = 'resume_blocks'
 
     def get_queryset(self):
-        p = SkillsData.objects.values('title')
-        a = [print(i['title']) for i in p ]
-        print(a)
-        print(p.query)
-        print(p)
-        return ResumeBlock.objects.all()
+        qs = super(ResumeBlockListView, self).get_queryset()
+        return self.model.objects.displayble()

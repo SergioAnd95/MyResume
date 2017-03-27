@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 """
 Django settings for resume project.
 
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
 
     # own
     'main',
+    'menu',
 ]
 
 MIDDLEWARE = [
@@ -72,6 +75,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'constance.context_processors.config',
             ],
         },
     },
@@ -154,6 +158,10 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # Costance settings
 
 CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
+
+CONSTANCE_CONFIG = {
+    'NAME': (u'Андреев Сергей', u'Имя')
+}
 
 # Ckeditor settings
 

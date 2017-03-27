@@ -2524,6 +2524,21 @@
 		padding-left: 20px;
 	}
 
+	.resume_block_text{
+		margin-bottom: 30px;
+	}
+
+	menu.menu{
+		margin-top: 20px;
+	}
+
+	menu.menu a{
+		margin-right: 10px;
+	}
+
+	menu.menu a:last-of-type{
+		margin-right: 0px;
+	}
 /* Footer */
 
 	#footer {

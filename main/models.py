@@ -7,16 +7,23 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 
 
+class ResumeBlockManager(models.Manager):
+
+    def displayble(self):
+        return self.filter(is_display=True)
+
 class ResumeBlock(models.Model):
     """
     Model to display resume block
     """
 
     title = models.CharField(_('Название'), max_length=100)
-    text = RichTextField(_('Текст'), null=True)
+    text = RichTextField(_('Текст'), null=True, blank=True)
     is_display = models.BooleanField(_('Отображать?'), default=True)
     update_date = models.DateTimeField(_('Дата обновления'), auto_now=True)
     display_order = models.IntegerField(_('Порядок отображения'), default=0)
+
+    objects = ResumeBlockManager()
 
     class Meta:
         verbose_name = _('Раздел резюме')

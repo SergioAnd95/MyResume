@@ -8,14 +8,14 @@
 {% endblock %}
 
 {% block content %}
-    <h2>{% trans 'Резюме' %}</h2>
+    <h1 style="text-align: center;">{% trans 'Резюме' %}</h1>
 
     {% for block in resume_blocks %}
         <section class="resume_block">
             <h2>{{ block.title }}</h2>
 
             {% if block.text %}
-                <div>
+                <div class="resume_block_text">
                 {{ block.text|safe }}
                 </div>
             {% endif %}
@@ -39,10 +39,12 @@
 
             {% for skill in block.skills_data.all %}
                 <div class="skill_data">
-                    <div class="col-xs-4">{{ skill.title }}</div>
-                    <div class="col-xs-8">
-                        <div class="progress">
-                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ skill.value }}%;">
+                    <div class="row">
+                        <div class="col-xs-4">{{ skill.title }}</div>
+                        <div class="col-xs-8">
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="{{ skill.value }}" aria-valuemin="0" aria-valuemax="100" style="width: {{ skill.value }}%;">
+                                </div>
                             </div>
                         </div>
                     </div>
