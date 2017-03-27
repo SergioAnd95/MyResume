@@ -3,4 +3,3 @@ django-ckeditor==5.2.1
 django-constance==2.0.0
 django-picklefield
 psycopg2==2.7.1
-

@@ -1550,6 +1550,10 @@
 
 /* Basic */
 
+	.error_field{
+		border-color: red !important;
+	}
+
 	body {
 		background: #fff;
 	}
@@ -2538,6 +2542,10 @@
 
 	menu.menu a:last-of-type{
 		margin-right: 0px;
+	}
+
+	form .row {
+		margin-bottom: 20px;
 	}
 /* Footer */
 

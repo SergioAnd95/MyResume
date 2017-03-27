@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+    Предложение
+{% endblock %}
+
+{% block content %}
+    <h1 style="text-align: center;">{% trans 'Сделать предложение' %}</h1>
+    <section>
+        <form class="ajax" method="post" action=".">
+            <div class="row">
+                <div class="col-xs-6">
+                    {{ form.email }}
+                </div>
+                <div class="col-xs-6">
+                    {{ form.company_name }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    {{ form.name }}
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    {{ form.text }}
+                </div>
+            </div>
+            {% csrf_token %}
+            <input type="submit" value="{% trans 'Отправить' %}" class="special">
+        </form>
+    </section>
+{% endblock %}
+
+{% block extra_scripts %}
+    <script type="text/javascript">
+    $(document).ready(function () {
+        $(".ajax input[type='submit']").on('click', function (e) {
+            e.preventDefault();
+            $form = $(this).parent('.ajax');
+            $form.find('.error_field').removeClass('error_field');
+            var url = $form.attr('action');
+            var data = $form.serialize();
+            $.ajax({
+                url: url,
+                data : data,
+                method: 'POST',
+                success:function (url) {
+                    alert('Благодарю за вашу заявку, свяжусь с вами в ближайшие время');
+                    // TODO : 'Normal window for thnx'
+                    //$(location).attr("href", url);
+                    $form.find('input, textarea')
+                        .not(':button, :submit, :reset, :hidden')
+                        .val('')
+                        .removeAttr('checked')
+                        .removeAttr('selected');
+
+                },
+                error:function (jqXHR, textStatus, exception) {
+                    if (jqXHR.status == 400){
+                        var errors = $.parseJSON(jqXHR.responseText);
+                        $.each(errors, function (key, val) {
+                            $form.find('#id_'+key).addClass('error_field');
+                        });
+                    }
+                }
+            })
+        });
+    })
+    </script>
+{% endblock %}

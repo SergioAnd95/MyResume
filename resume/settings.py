@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     # own
     'main',
     'menu',
+    'proposal',
+
 ]
 
 MIDDLEWARE = [
