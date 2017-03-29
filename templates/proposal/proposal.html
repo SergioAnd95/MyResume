@@ -2,12 +2,13 @@
 {% load i18n %}
 
 {% block title %}
-    Предложение
+    {% trans 'Предложение' %}
 {% endblock %}
 
 {% block content %}
     <h1 style="text-align: center;">{% trans 'Сделать предложение' %}</h1>
     <section>
+        <p style="text-align: justify">{% blocktrans %}Если вас заинтересовало мое резюме, то вы можете оставить мне предложение заполнив форму ниже и я в ближайшее время свяжусь с вами.{% endblocktrans %}</p>
         <form class="ajax" method="post" action=".">
             <div class="row">
                 <div class="col-xs-6">

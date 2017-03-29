@@ -1,5 +1,6 @@
+{% load i18n %}
 <menu class="menu">
-    {% for item in menu %}
-        <a href="{{ item.href }}">{{ item.name }}</a>
-    {% endfor %}
+
+    <a href="{% url 'main:resume' %}">{% trans 'Резюме' %}</a>
+    <a href="{% url 'proposal:proposal_create' %}">{% trans 'Предложение' %}</a>
 </menu>

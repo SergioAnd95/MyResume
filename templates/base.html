@@ -1,5 +1,5 @@
 {% load staticfiles %}
-{% load menu_tags %}
+{% load i18n %}
 <!DOCTYPE HTML>
 <!--
 	Strata by HTML5 UP
@@ -25,7 +25,7 @@
 				responsive site template freebie<br />
 				crafted by <a href="#">HTML5 UP</a>.</h1>
 
-                {% draw_menu %}
+                {% include 'menu/menu.html' %}
 			</header>
 
 		<!-- Main -->
@@ -39,6 +39,15 @@
 
 		<!-- Footer -->
 			<footer id="footer">
+
+                <form method="post" action="{% url 'set_language' %}">{% csrf_token %}
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <button class="{{ language.code }} lang-btn" type="submit" name="language" value="{{ language.code }}">{{ language.name_local }}</button>
+                    {% endfor %}
+                </form>
 				<ul class="icons">
 					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
 					<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
