@@ -1,5 +1,6 @@
 Django==1.10.5
 django-ckeditor==5.2.1
 django-constance==2.0.0
-django-picklefield
+django-modeltranslation==0.12
+django-picklefield==0.3.2
 psycopg2==2.7.1

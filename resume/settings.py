@@ -33,6 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,7 +49,6 @@ INSTALLED_APPS = [
 
     # own
     'main',
-    'menu',
     'proposal',
 
 ]
@@ -164,6 +164,15 @@ CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
 CONSTANCE_CONFIG = {
     'NAME': (u'Андреев Сергей', u'Имя')
 }
+
+
+# Modeltranslation
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
+
+MODELTRANSLATION_TRANSLATION_FILES = (
+    'main.translation',
+)
 
 # Ckeditor settings
 

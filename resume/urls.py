@@ -26,7 +26,8 @@ urlpatterns = i18n_patterns(
     url(r'^admin/', admin.site.urls),
     url(r'^', include('main.urls', namespace='main')),
     url(r'^proposal/', include('proposal.urls', namespace='proposal')),
-    url(r'^documents/', TemplateView.as_view(template_name='documents.html'))
+    url(r'^i18n/', include('django.conf.urls.i18n')),
+    url(r'^documents/', TemplateView.as_view(template_name='documents.html')),
 )
 
 urlpatterns += [
