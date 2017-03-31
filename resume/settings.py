@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     # own
     'main',
     'proposal',
+    'social_link',
 
 ]
 

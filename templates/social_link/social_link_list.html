@@ -1,0 +1,5 @@
+<ul class="icons">
+    {% for link in social_links %}
+    <li><a href="{{ link.url }}" class="icon fa-{{ link.social_network }}"><span class="label">{{ link.social_network }}</span></a></li>
+    {% endfor %}
+</ul>

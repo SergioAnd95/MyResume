@@ -1,4 +1,5 @@
 {% load staticfiles %}
+{% load social_link_tags %}
 {% load i18n %}
 <!DOCTYPE HTML>
 <!--
@@ -48,12 +49,7 @@
                         <button class="{{ language.code }} lang-btn" type="submit" name="language" value="{{ language.code }}">{{ language.name_local }}</button>
                     {% endfor %}
                 </form>
-				<ul class="icons">
-					<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
-					<li><a href="#" class="icon fa-dribbble"><span class="label">Dribbble</span></a></li>
-					<li><a href="#" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
-				</ul>
+                {% draw_social_links %}
 				<ul class="copyright">
 					<li>&copy; Untitled</li><li>Design: <a href="#">HTML5 UP</a></li>
 				</ul>
