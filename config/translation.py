@@ -8,4 +8,4 @@ class SiteConfigurationTranslationOptions(TranslationOptions):
     """
     Translation settings class for model ResumeBlock
     """
-    fields = ('hello_text', )
+    fields = ('hello_text', 'proposal_succes_msg')

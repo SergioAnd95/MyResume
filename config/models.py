@@ -9,6 +9,7 @@ from ckeditor.fields import RichTextField
 class SiteConfiguration(SingletonModel):
     avatar = models.ImageField(_('Аватар'), upload_to='avatar')
     hello_text = RichTextField(_('Приветственный текст'))
+    proposal_succes_msg = RichTextField(_('Благодарственное письмо'))
 
     class Meta:
         verbose_name = _('Настройки сайта')

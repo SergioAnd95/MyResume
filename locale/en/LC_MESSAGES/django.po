@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-01 19:55+0000\n"
+"POT-Creation-Date: 2017-04-01 23:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -25,7 +25,11 @@ msgstr "Avatar"
 msgid "Приветственный текст"
 msgstr "Welcome text"
 
-#: config/models.py:14
+#: config/models.py:12
+msgid "Благодарственное письмо"
+msgstr "Thankful message"
+
+#: config/models.py:15
 msgid "Настройки сайта"
 msgstr "Site configuration"
 
@@ -100,7 +104,7 @@ msgid "Дата создания"
 msgstr "End date"
 
 #: proposal/models.py:19 templates/menu/menu.html:4
-#: templates/proposal/proposal.html:5
+#: templates/proposal/proposal.html:7
 msgid "Предложение"
 msgstr "Make proposal"
 
@@ -130,11 +134,11 @@ msgstr "Social network"
 msgid "Резюме"
 msgstr "Resume"
 
-#: templates/proposal/proposal.html:9
+#: templates/proposal/proposal.html:13
 msgid "Сделать предложение"
 msgstr "Make proposal"
 
-#: templates/proposal/proposal.html:11
+#: templates/proposal/proposal.html:15
 msgid ""
 "Если вас заинтересовало мое резюме, то вы можете оставить мне предложение "
 "заполнив форму ниже и я в ближайшее время свяжусь с вами."
@@ -142,6 +146,6 @@ msgstr ""
 "If you were interested by my summary, you can leave me an offer filling out "
 "the form below and I will soon contact you."
 
-#: templates/proposal/proposal.html:32
+#: templates/proposal/proposal.html:36
 msgid "Отправить"
 msgstr "Send"
