@@ -1,5 +1,6 @@
 {% load staticfiles %}
 {% load social_link_tags %}
+{% load solo_tags %}
 {% load i18n %}
 <!DOCTYPE HTML>
 <!--
@@ -7,6 +8,7 @@
 	html5up.net | @n33co
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 -->
+{% get_solo 'config.SiteConfiguration' as site_config %}
 <html>
 	<head>
 		<title>{% block title %}{% endblock %}</title>
@@ -20,11 +22,10 @@
 	<body id="top">
 
 		<!-- Header -->
+            {% get_solo 'config.SiteConfiguration' as site_config %}
 			<header id="header">
-				<a href="#" class="image avatar"><img src="{% static 'images/avatar.jpg' %}" alt="" /></a>
-				<h1><strong>{{ config.NAME }}</strong>, a super simple<br />
-				responsive site template freebie<br />
-				crafted by <a href="#">HTML5 UP</a>.</h1>
+				<a href="#" class="image avatar"><img src="{{ site_config.avatar.url }}" alt="" /></a>
+				<div>{{ site_config.hello_text|safe }}</div>
 
                 {% include 'menu/menu.html' %}
 			</header>

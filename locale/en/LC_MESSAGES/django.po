@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-29 09:08+0000\n"
+"POT-Creation-Date: 2017-04-01 19:55+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,77 +17,118 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: main/models.py:20 main/models.py:42 main/models.py:64
+#: config/models.py:10
+msgid "Аватар"
+msgstr "Avatar"
+
+#: config/models.py:11
+msgid "Приветственный текст"
+msgstr "Welcome text"
+
+#: config/models.py:14
+msgid "Настройки сайта"
+msgstr "Site configuration"
+
+#: main/models.py:21 main/models.py:43 main/models.py:65
 msgid "Название"
 msgstr "Name"
 
-#: main/models.py:21 main/models.py:45
+#: main/models.py:22 main/models.py:46
 msgid "Текст"
 msgstr "Text"
 
-#: main/models.py:22
+#: main/models.py:23
 msgid "Отображать?"
 msgstr "Display?"
 
-#: main/models.py:23
+#: main/models.py:24
 msgid "Дата обновления"
 msgstr "Update date"
 
-#: main/models.py:24
+#: main/models.py:25
 msgid "Порядок отображения"
 msgstr "Display order"
 
-#: main/models.py:29 main/models.py:47 main/models.py:67
+#: main/models.py:30 main/models.py:48 main/models.py:74
 msgid "Раздел резюме"
 msgstr "Section summary"
 
-#: main/models.py:30
+#: main/models.py:31
 msgid "Разделы резюме"
 msgstr "Sections summary"
 
-#: main/models.py:43
+#: main/models.py:44
 msgid "Дата начала"
 msgstr "Begin date"
 
-#: main/models.py:44
+#: main/models.py:45
 msgid "Дата окончания"
 msgstr "End date"
 
-#: main/models.py:50
+#: main/models.py:51
 msgid "Хронологические данные"
 msgstr "Chronological data"
 
-#: main/models.py:65
+#: main/models.py:67
 msgid "Значение"
-msgstr ""
+msgstr "Value"
 
-#: main/models.py:70
+#: main/models.py:78
 msgid "Размерные данные"
-msgstr ""
+msgstr "Dimensional data"
 
-#: proposal/forms.py:13
+#: proposal/forms.py:13 proposal/models.py:10
 msgid "E-mail"
 msgstr "E-mail"
 
-#: proposal/forms.py:14
+#: proposal/forms.py:14 proposal/models.py:11
 msgid "ФИО"
 msgstr "Full name"
 
-#: proposal/forms.py:15
+#: proposal/forms.py:15 proposal/models.py:12
 msgid "Компания"
 msgstr "Company"
 
-#: proposal/forms.py:16
+#: proposal/forms.py:16 proposal/models.py:13
 msgid "Сообщение"
 msgstr "Message"
 
-#: templates/index.html:7 templates/index.html:11
-msgid "Резюме"
-msgstr "Resume"
+#: proposal/models.py:9
+#, fuzzy
+#| msgid "Дата окончания"
+msgid "Дата создания"
+msgstr "End date"
 
+#: proposal/models.py:19 templates/menu/menu.html:4
 #: templates/proposal/proposal.html:5
 msgid "Предложение"
 msgstr "Make proposal"
+
+#: proposal/models.py:20
+#, fuzzy
+#| msgid "Предложение"
+msgid "Предложения"
+msgstr "Make proposal"
+
+#: social_link/models.py:30
+msgid "Социальная сеть"
+msgstr "Social network"
+
+#: social_link/models.py:34
+#, fuzzy
+#| msgid "Социальная сеть"
+msgid "Социальные ссылка"
+msgstr "Social network"
+
+#: social_link/models.py:35
+#, fuzzy
+#| msgid "Социальная сеть"
+msgid "Социальные ссылки"
+msgstr "Social network"
+
+#: templates/index.html:7 templates/index.html:11 templates/menu/menu.html:3
+msgid "Резюме"
+msgstr "Resume"
 
 #: templates/proposal/proposal.html:9
 msgid "Сделать предложение"

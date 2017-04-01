@@ -5,8 +5,6 @@ from django.db.models import Count
 from .models import ResumeBlock, SkillsData
 # Create your views here.
 
-# TODO: Create View to display Resume blocks (ListView)
-
 
 class ResumeBlockListView(ListView):
     template_name = 'index.html'

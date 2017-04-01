@@ -42,15 +42,15 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # third
-    'constance',
-    'constance.backends.database',
     'ckeditor',
     'picklefield',
+    'solo',
 
     # own
     'main',
     'proposal',
     'social_link',
+    'config',
 
 ]
 
@@ -78,7 +78,6 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'constance.context_processors.config',
             ],
         },
     },
@@ -156,15 +155,6 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-
-
-# Costance settings
-
-CONSTANCE_BACKEND = 'constance.backends.database.DatabaseBackend'
-
-CONSTANCE_CONFIG = {
-    'NAME': (u'Андреев Сергей', u'Имя')
-}
 
 
 # Modeltranslation

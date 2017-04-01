@@ -12,6 +12,7 @@ class ResumeBlockManager(models.Manager):
     def displayble(self):
         return self.filter(is_display=True)
 
+
 class ResumeBlock(models.Model):
     """
     Model to display resume block
@@ -62,9 +63,16 @@ class SkillsData(models.Model):
     """
 
     title = models.CharField(_('Название'), max_length=100)
-    value = models.IntegerField(_('Значение'), validators=[MinValueValidator(0), MaxValueValidator(100)])
+    value = models.IntegerField(
+        _('Значение'),
+        validators=[MinValueValidator(0), MaxValueValidator(100)]
+    )
 
-    resume_block = models.ForeignKey(ResumeBlock, related_name='skills_data', verbose_name=_('Раздел резюме'))
+    resume_block = models.ForeignKey(
+        ResumeBlock,
+        related_name='skills_data',
+        verbose_name=_('Раздел резюме')
+    )
 
     class Meta:
         verbose_name = _('Размерные данные')
