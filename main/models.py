@@ -10,6 +10,7 @@ from ckeditor.fields import RichTextField
 class ResumeBlockManager(models.Manager):
 
     def displayble(self):
+        # Display resume block where param is_display is True
         return self.filter(is_display=True)
 
 

@@ -7,6 +7,9 @@ from .models import ResumeBlock, SkillsData
 
 
 class ResumeBlockListView(ListView):
+    """
+    View to display resume wich consits of resume block
+    """
     template_name = 'index.html'
     model = ResumeBlock
     context_object_name = 'resume_blocks'

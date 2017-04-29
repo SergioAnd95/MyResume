@@ -9,6 +9,9 @@ from .forms import ProposalForm
 
 
 class ProposalCreateView(AjaxFormMixin, CreateView):
+    """
+    View to display form and ajax validate and proccesing data
+    """
     form_class = ProposalForm
     context_object_name = 'proposal_form'
     template_name = 'proposal/proposal.html'
